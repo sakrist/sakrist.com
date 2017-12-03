@@ -5,10 +5,10 @@ and/or [Constrained Delaunay triangulation](https://en.wikipedia.org/wiki/Constr
 Main purpose is triangulation of 2D polygons/shapes with holes.
 Also available functionality to work with bezier curves and apply triangulation.
 
-Language of implementation: Swift
+Language of implementation: Swift<br />
 Compatible OS:  iOS/macOS
 
-If you have interest, please contact me by email: sakrist [at] me [dot] com
+If you have interest, please contact me by email: **sakrist [at] me [dot] com**
 
 Examples of work:
 
