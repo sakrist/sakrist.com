@@ -43,7 +43,10 @@ var options = window.location.search.slice(1)
                       }, {});
 
 var u = urls[options['page']];
-open(u);
+if (u != undefined) {
+	open(u);	
+}
+
 
 function open(url) {
 	fetch(url).then(function(response) {
