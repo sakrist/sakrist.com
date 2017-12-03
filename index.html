@@ -1,5 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+  	<title>Notes</title>
+  </head>
 <body>
-Under development
+<a href="?page=VBPieChart">VBPieChart</a><br />
+<a href="?page=CDT">Conforming Delaunay Triangulation</a><br />
+<a href="https://twitter.com/sakrist">Twitter</a><br />
+  <div id="targetDiv"></div>
+
+<!-- https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.7/marked.min.js -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.2/showdown.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.7/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/objectivec.min.js"></script>
+<script>
+
+var urls = {
+	'VBPieChart':'https://raw.githubusercontent.com/sakrist/VBPieChart/master/README.md',
+	'CDT':'https://raw.githubusercontent.com/sakrist/sakrist.com/master/cdt.md'
+};
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false
+});
+
+
+var options = window.location.search.slice(1)
+                      .split('&')
+                      .reduce(function _reduce (/*Object*/ a, /*String*/ b) {
+                        b = b.split('=');
+                        a[b[0]] = decodeURIComponent(b[1]);
+                        return a;
+                      }, {});
+
+var u = urls[options['page']];
+open(u);
+
+function open(url) {
+	fetch(url).then(function(response) {
+	    response.text().then(function(text) {
+	      //storedText = text;
+	      pageLoaded(text);
+	    });
+	});
+}
+
+
+function pageLoaded(text) {
+	// var text = document.getElementById('sourceTA').value;
+	var  target = document.getElementById('targetDiv');
+	target.innerHTML = marked(text);
+}
+
+
+</script>
+
 </body>
 </html>
+
