@@ -2,15 +2,24 @@
 <html lang="en">
   <head>
   	<meta charset="utf-8">
-  	<title>Notes</title>
+    <title>Purple Octocat</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
   </head>
 <body>
-<a href="?page=VBPieChart">VBPieChart</a><br />
-<a href="?page=CDT">Conforming Delaunay Triangulation</a><br />
-<a href="https://github.com/sakrist" target="_blank">github</a><br />
-<a href="https://twitter.com/sakrist" target="_blank">@sakrist</a><br />
+  <div class="footer">
+      <div class="footer-center">
+    <a href="?page=Home" class="bar-item">Home</a>
+    <a href="?page=CDT" class="bar-item">CDT</a>
+    <a href="https://github.com/sakrist" class="bar-item" target="_blank">
+      <img src="images/GitHub.png" class="github" size="40px">
+    </a>
+    <a href="https://twitter.com/sakrist" class="bar-item" target="_blank">
+      <img src="images/twitter.svg" class="github" size="40px">
+    </a>
+    </div>
+  </div>
 
-<div id="targetDiv"></div>
+<div id="targetDiv" class="content"></div>
 
 <!-- https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.7/marked.min.js -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.2/showdown.min.js"></script> -->
@@ -19,9 +28,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/objectivec.min.js"></script>
 <script>
 
+var defaultPage = "Home";
 var urls = {
-	'VBPieChart':'https://raw.githubusercontent.com/sakrist/VBPieChart/master/README.md',
-	'CDT':'https://raw.githubusercontent.com/sakrist/sakrist.com/master/cdt.md'
+	'Home':'https://raw.githubusercontent.com/sakrist/VBPieChart/master/pages/home.md',
+	'CDT':'https://raw.githubusercontent.com/sakrist/sakrist.com/master/pages/cdt.md'
 };
 
 marked.setOptions({
@@ -44,7 +54,9 @@ var options = window.location.search.slice(1)
                         return a;
                       }, {});
 
-var u = urls[options['page']];
+var pageName = (options['page'] != undefined) ? options['page'] : defaultPage;
+
+var u = urls[pageName];
 if (u != undefined) {
 	open(u);	
 }
