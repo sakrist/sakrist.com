@@ -3,13 +3,13 @@
 and/or [Constrained Delaunay triangulation](https://en.wikipedia.org/wiki/Constrained_Delaunay_triangulation)
 
 Main purpose is triangulation of 2D polygons/shapes with holes.
-Also available functionality to work with bezier curves and apply triangulation.
+Also available functionality to work with bezier curves and apply triangulation on them.
 
 Language of implementation: **Swift** 
 
-Compatible OS:  **iOS/macOS**
+Compatible OS:  **iOS and macOS**
 
-If you have interest, please contact me by email: **sakrist [at] me [dot] com**
+If you are interested in product, please contact me by email: **sakrist [at] me [dot] com**
 
 Examples of work:
 
