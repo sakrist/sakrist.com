@@ -1,0 +1,62 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    margin: 5px;
+    padding: 5px;
+}
+
+.footer { 
+    margin: 0;
+    padding: 0;
+    background-color: rgb(123, 64, 146); 
+    font-family: "proxima-nova", sans-serif;
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    height: 50px;
+    text-align:center;
+ }
+
+ .footer-center {
+    display:inline-block;
+    margin: auto;
+ }
+
+ .footer a {
+    color: white;
+ }
+
+ .bar-item {
+    padding:  16px;
+    padding-top: 17px;
+    float: left;
+    width: auto;
+    height: 20px;
+    border: none;
+    outline: none;
+    display: block;
+    text-decoration: none;
+ }
+ .bar-item img {
+    margin-top: -3px;
+ }
+ 
+ .footer :visited {
+    color: rgb(255, 255, 255);
+ }
+ .footer-center :hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(141, 77, 201);
+ }
+
+ .github {
+    margin: 0;
+    padding: 0;
+    width:auto;
+    height:20px;
+ }
